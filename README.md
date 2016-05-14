@@ -32,3 +32,25 @@ GFXPCD3D9Device::reset - depthstencil 8ad260 has 2 ref's
 
 5. ToDo
 Fix Issues
+
+
+----------------------------------------------------------------------------------------------
+
+Verve updated for Torque3D 3.5 MIT http://www.garagegames.com/community/blogs/view/22554
+
+by J0linar · 01/17/2014 (4:59 pm)
+Verve MIT Licensed
+
+It is done, more or less
+Verve is ready to be tried(used) with Torque3D 3.5 MIT
+
+GitHub Repo
+github.com/J0linar/Verve
+
+Special Note:
+To avoid mass confusion - I am not the Developer of Verve!
+Verve was made by Phillip O`Shea from Violent Tulip
+He was that kind to Open Source Verve under the MIT License.
+So if you wish to thank someone, thank him!
+github.com/antesim/verve
+This is his Verve Repo, there wont be any updates by him.

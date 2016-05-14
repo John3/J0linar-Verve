@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Violent Tulip - Torque Script Event</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="pragma" content="no-cache">
+
+
+<script type="text/javascript" src="ajax.js"></script>
+
+<link rel="stylesheet" type="text/css" href="default_012.css" media="all">
+</head>
+<body>
+<div id="header">
+    <div id="header_inner">
+        <a id="btn_home" href="http://www.violent-tulip.com/?doc-type=home" title="home"></a>
+        <a id="btn_contact" href="http://www.violent-tulip.com/?doc-type=contact" title="contact"></a>
+    </div>
+</div><div id="main">
+    <div id="classMethods">
+        <h1>Tutorial : Torque Script Event</h1>
+        <div class="class_method_last">
+    <p>Objects: VScriptEventTrack, VScriptEvent</p>
+    <div class="class_method_descriptor">
+        <div class="class_method_description">
+            <p>A Script  Event will call or evaluate a command upon triggering. The command is  defined in the Event's "Command" property. Be sure that you verify the  validity of the command, as it is not observed by Verve. It can be  difficult to identify any errors in the statement, but the most common  are <em>parse errors</em>.</p>
+            <p> If a Script Event Track is added to a  Scene Object Group (or derived class), triggered Events will call a  method on the object instead of a global function. For example the  expression, "Hello World", will evaluate something that looks like this:</p>
+            <pre>// In Scene Object Group.
+%referenceObject.HelloWorld();<br>
+// Not in Scene Object Group.
+HelloWorld();</pre>
+            <p>The  above only affects Events that are set to "METHOD". If an Event is set  to evaluate an "EXPRESSION", then the command is evaluated something  like this:</p>
+            <pre>eval( %command );</pre>
+            <br>
+        </div>
+        <p class="class_method_descriptor_label">How to Use:</p>
+        <div class="class_method_description">
+            <p> Right-Click on your Group, go to "Add Track" and select "Add Script Event Track".</p>
+            <p><img src="ScriptEventTrack_0.jpg" height="221" width="696"></p>
+            <p> Right-Click on the Track and select "Add Event".</p>
+            <p><img src="ScriptEventTrack_1.jpg" height="221" width="696"></p>
+            <p> Select the newly created Event. The Property List window will refresh  and inspect the Event. Enter the command to be evaluated in the  "Command" property. Note: Be sure to verify the validity of the  command, as it is not observed by Verve.</p>
+            <p><img src="ScriptEventTrack_2.jpg" height="221" width="696"></p>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+<div id="footer">Copyright © Violent Tulip 2009-2010. All Rights Reserved.</div>
+</body>
+</html>

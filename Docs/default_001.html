@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Violent Tulip - Sequence Playback Basics</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="pragma" content="no-cache">
+
+
+<script type="text/javascript" src="ajax.js"></script>
+
+<link rel="stylesheet" type="text/css" href="default_001.css" media="all">
+</head>
+<body>
+<div id="header">
+    <div id="header_inner">
+        <a id="btn_home" href="http://www.violent-tulip.com/?doc-type=home" title="home"></a>
+        <a id="btn_contact" href="http://www.violent-tulip.com/?doc-type=contact" title="contact"></a>
+    </div>
+</div><div id="main">
+    <div id="classMethods">
+        <h1>Tutorial : Sequence Playback Basics</h1>
+        <div class="class_method_last">
+    <div class="class_method_descriptor">
+        <div class="class_method_description">
+            <p>There are a few ways to display a sequence to your audience. The first, and probably most common method is to present a Cinematic or Cutscene event. To help with this, Verve comes with a few handy scripts and GUIs to help with this.</p>
+            <p>Inside the script file, "scripts/server/VCinematicController.cs", you will find a script class for a Cinematic controller. This class will setup a GUI and relieve the user of control of their avatar until the sequence is complete. To use this class, all you need to do is call the following method:</p>
+            <pre>Verve::PlayCinematic( "sequences/mySequence.vsf" );</pre>
+            <p>Just replace the argument, "sequences/mySequence.vsf", with the path to the sequence file you wish to play.</p>
+            <p>Not all sequences that you play will be classified as a full-blown Cinematic or Cutscene, so you'll need to know how to play your own sequence through script as well. The first thing you need to do is to create a VController object. If you haven't yet familiarised yourself with this class, now would be a good time to, but basically this is the object that controls the entire sequence.</p>
+            <pre>// Create the Controller.
+%controller = new VController();</pre>
+            <p>Now that the controller has been created, you need to load the sequence:</p>
+            <pre>// Load the Sequence.
+%controller.readFile( %sequenceFile );</pre>
+            <p>In case you wanted to preload a sequence at initialisation, the controller will not play the sequence until it is requested:</p>
+            <pre>// Play the Sequence.
+%controller.play();</pre>
+            <p>You also have direct control over how the sequence plays and can stop or pause the sequence at any stage during playback:</p>
+            <pre>// Pause the Sequence.
+%controller.pause();
+
+// Stop the Sequence.
+%controller.stop();</pre>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+<div id="footer">Copyright © Violent Tulip 2009-2010. All Rights Reserved.</div>
+</body>
+</html>

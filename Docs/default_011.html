@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Violent Tulip - Sound Effect</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="pragma" content="no-cache">
+
+
+<script type="text/javascript" src="ajax.js"></script>
+
+<link rel="stylesheet" type="text/css" href="default_011.css" media="all">
+</head>
+<body>
+<div id="header">
+    <div id="header_inner">
+        <a id="btn_home" href="http://www.violent-tulip.com/?doc-type=home" title="home"></a>
+        <a id="btn_contact" href="http://www.violent-tulip.com/?doc-type=contact" title="contact"></a>
+    </div>
+</div><div id="main">
+    <div id="classMethods">
+        <h1>Tutorial : Sound Effect</h1>
+        <div class="class_method_last">
+    <p>Objects: VSoundEffectTrack, VSoundEffectEvent </p>
+    <div class="class_method_descriptor">
+        <div class="class_method_description">
+            <p> A Sound  Event will start playing a sound effect upon triggering. The sound that  is to be played is defined by the "SoundData" property. This property  must reference a valid SFXProfile object. If this object is missing or  invalid, no sound effect will play.</p>
+            <p> Sound effects which play as  a result of a VSoundEffectEvent will be adjusted so that the correct  position and pitch are applied. Other properties, like volume,  streaming or 2D/3D must be set on the SFXProfile or SFXDescription  object and aren't configurable via Sound Effect Tracks or Events.</p>
+            <p> If you are creating a sequence to play in a multi-player game, Pausing and Resuming the root Controller will <strong>not </strong>affect  sound effect playback on networked clients. Sound Effects are  replicated on each client using NetEvents and are not controllable  after creation.</p>
+            <br>
+        </div>
+        <p class="class_method_descriptor_label">How to Use:</p>
+        <div class="class_method_description">
+            <p> Right-Click on your Group, go to "Add Track" and select "Add Sound Effect Track".</p>
+            <p><img src="SoundEffectTrack_0.jpg" height="221" width="696"></p>
+            <p> Right-Click on the Track and select "Add Event".</p>
+            <p><img src="SoundEffectTrack_1.jpg" height="221" width="696"></p>
+            <p> Select the newly created Event. The Property List window will refresh  and inspect the Event. Change the "SoundData" property to the name of the SFXProfile you wish to have played upon triggering.</p>
+            <p><img src="SoundEffectTrack_2.jpg" height="221" width="696"></p>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+<div id="footer">Copyright © Violent Tulip 2009-2010. All Rights Reserved.</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Violent Tulip - Scenes and Scene Jumping</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="pragma" content="no-cache">
+
+
+<script type="text/javascript" src="ajax.js"></script>
+
+<link rel="stylesheet" type="text/css" href="default_009.css" media="all">
+</head>
+<body>
+<div id="header">
+    <div id="header_inner">
+        <a id="btn_home" href="http://www.violent-tulip.com/?doc-type=home" title="home"></a>
+        <a id="btn_contact" href="http://www.violent-tulip.com/?doc-type=contact" title="contact"></a>
+    </div>
+</div><div id="main">
+    <div id="classMethods">
+        <h1>Tutorial : Scenes and Scene Jumping</h1>
+        <div class="class_method_last">
+    <p>Objects: VSceneJumpTrack, VSceneJumpEvent</p>
+    <div class="class_method_descriptor">
+        <div class="class_method_description">
+            <p>A Scene Jump Event will shift the position of the root Controller upon triggering. Scenes are defined in the sequences Director Track. If no Director Track exists, or the scene you are attempting to jump to is invalid, then no jump will occur.</p>
+            <p>You can use this Event type to loop sections of your sequence or create interactive or branched sequences.</p>
+            <br>
+        </div>
+        <p class="class_method_descriptor_label">How to Use:</p>
+        <div class="class_method_description">
+            <p>To use Scene Jump events, you must first add a VSceneJumpTrack to your sequence's Director Group.If you are unsure of how to create or validate a Group, <a data-sb-indepth="true" href="default.html">click here</a>.</p>
+            <p>You must also set up your sequence to use Scene Labels. Scenes are defined by the labels given to Director Events in your sequence. When your Director cuts or changes camera views, you can define the segment as a new Scene. For more information, see the documentation for the Director Group.</p>
+            <p>Right-Click on the Group, go to "Add Track" and select "Add Scene Jump Track".</p>
+            <p><img src="SceneJumpTrack_0.jpg" height="221" width="696"></p>
+            <p>Right-Click on the Track and select "Add Event".</p>
+            <p><img src="SceneJumpTrack_1.jpg" height="221" width="696"></p>
+            <p>Select the newly created Event. The Property List window will refresh and inspect the Event. To change which Scene you would like to jump to once the Event has been triggered, select a valid Scene from the dropdown menu for the Event's "Target" property.</p>
+            <p><img src="SceneJumpTrack_2.jpg" height="221" width="696"></p>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+<div id="footer">Copyright © Violent Tulip 2009-2010. All Rights Reserved.</div>
+
+
+</body></html>

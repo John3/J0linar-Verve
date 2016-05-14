@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Violent Tulip - Motion</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="pragma" content="no-cache">
+
+
+<script type="text/javascript" src="ajax.js"></script>
+
+<link rel="stylesheet" type="text/css" href="default_007.css" media="all">
+</head>
+<body>
+<div id="header">
+    <div id="header_inner">
+        <a id="btn_home" href="http://www.violent-tulip.com/?doc-type=home" title="home"></a>
+        <a id="btn_contact" href="http://www.violent-tulip.com/?doc-type=contact" title="contact"></a>
+    </div>
+</div><div id="main">
+    <div id="classMethods">
+        <h1>Tutorial : Motion</h1>
+        <div class="class_method_last">
+    <p>Objects: VMotionTrack, VMotionEvent</p>
+    <div class="class_method_descriptor">
+        <div class="class_method_description">
+            <p>Moving and animating your objects at a whim are probably the most important aspects of a Cinematic Sequence. Verve gives you that control by allowing you to define Paths which objects can attach to.</p>
+            <p>The Verve Editor interfaces with referenced paths to aid in their creation and modification. Once you have a valid path reference, adding and deleting events in the VMotionTrack, will add or delete the corresponding node on the path. Moving the trigger time of an event will not alter the node, though it does alter the speed that an object moves over that path segment.</p>
+            <p>This tutorial will give you the knowledge to create some simple in-game motion sequences using the new Path feature in Verve. In addition to creating and editing paths and nodes, you will also see how this is interfaced with Verve's Sequence Editor giving you control over some of the finer details.</p>
+            <p>Two common uses for a Path will be covered here:</p>
+            <ol>
+                <li>Elevators</li>
+                <li>Sliding Doors</li>
+            </ol>
+</div>
+        <p class="class_method_descriptor_label">How to Use:</p>
+        <div class="class_method_description">
+            <p><strong>Project</strong></p>
+            <p>This tutorial requires you to use the "VerveTutorialBase" provided with your Verve Download. This project contains all of the necessary files and assets required to complete the tutorial. The concepts covered here are not localized to this project and should be applicable to your own work.</p>
+            <p><strong>Mission Setup</strong></p>
+            <p>Open the "missions/SimplePathTutorial.mis" file (provided in the files above) in Torque 3D's World Editor.</p>
+            <p>The key objects in this Mission you should observe before continuing are the Doors and the Elevator Platform:</p>
+            <ol>
+                <li>ElevatorPlatformShape</li>
+                <li>DoorShape0_Left and DoorShape0_Right</li>
+                <li>DoorShape1_Left and DoorShape1_Right</li>
+            </ol>
+            <p>This Elevator is just a short example on how to make an object moving between two coordinates using Verve. The Shape object itself will attach to a single VPath object which defines the world coordinates which the shape interpolates between. Similarly, each of the two shapes making up a Door will have its own VPath to attach to.</p>
+            <p>Note: You cannot ride on the elevator, as this feature is not supported by Torque 3D or Verve. There are a number of resources on the GarageGames website which may or may not work with Torque 3D.</p>
+        </div>
+        <div class="class_method_description">
+            <p><strong>Elevator Platform</strong></p>
+            <p>1. Create the Elevator Path.</p>
+            <p>The first step is to enter the "Path Editor" and create a new VPath Object To do this, you can click on the "Create new Path" button in the top right corner of the "Path Editor" window. You could also do this from the World Editor by navigating through the Library to the "Level" category and selecting "VPath".</p>
+            <p>Give the new Path the following properties:</p>
+            <pre><table border="0" cellpadding="0" cellspacing="0" width="300">
+                <tbody><tr>
+                    <td colspan="2">Path:</td>
+                </tr>
+                <tr>
+                    <td width="120">Name:</td>
+                    <td width="180">ElevatorPlatformPath</td>
+                </tr>
+                <tr>
+                    <td>Position:</td>
+                    <td>0, 22.25, -0.25</td>
+                </tr>
+                <tr>
+                    <td>Path Type:</td>
+                    <td>LINEAR</td>
+                </tr>
+            </tbody></table></pre>
+            <p>The Path Nodes will be created from keyframes Events in the Sequence Editor, so there is no need to add any Nodes at this stage.</p>
+            <p>2. Setup the Verve Sequence.</p>
+            <p>Launch the "Sequence Editor" and create a new sequence with the following properties:</p>
+            <p><img src="PathTutorial_0.png" alt="" height="221" width="696"></p>
+            <p>Click on the "Add Group" button and select "Scene Object Group". Use the following properties:</p>
+            <p><img src="PathTutorial_1.png" alt="" height="221" width="696"></p>
+            <p>3. Keyframe the Elevator Positions.</p>
+            <p>Make sure that the time cue on the Timeline in the editor is at the beginning of the sequence.</p>
+            <p>Select the "Motion Track" for "ElevatorPlatformGroup" and then hit the "Add Event" button. A new Path Node will have been created at the initial position of the Elevator.</p>
+            <p>Move the Time Cue in the Sequence Editor to the end of the sequence (time: 5000).</p>
+            <p>Go into the World Editor and move the "ElevatorPlatformShape" up 12 units:</p>
+            <pre><table border="0" cellpadding="0" cellspacing="0" width="300">
+                <tbody><tr>
+                    <td colspan="2">ElevatorPlatformShape:</td>
+                </tr>
+                <tr>
+                    <td width="120">Position:</td>
+                    <td width="180">0, 22.25, 11.75</td>
+                </tr>
+            </tbody></table></pre>
+            <p>Go back into the Sequence Editor and hit the "Add Event" button.</p>
+            <p>If you drag the Time Cue around, you should see that the Elevator moves up and down between the two Nodes that were created.</p>
+            <p>Save the Sequence as "ElevatorPlatform_Up+Down.vsf" to your Sequences folder.</p>
+        </div>
+        <div class="class_method_description">
+            <p><strong>First set of Sliding Doors</strong></p>
+            <p>1. Create the two Door Paths.</p>
+            <p>Create two new VPath objects with the following properties:</p>
+            <pre><table border="0" cellpadding="0" cellspacing="0" width="300">
+                <tbody><tr>
+                    <td colspan="2">Path1:</td>
+                </tr>
+                <tr>
+                    <td width="120">Name:</td>
+                    <td width="180">DoorPath_Left</td>
+                </tr>
+                <tr>
+                    <td>Position:</td>
+                    <td>-2, 12, 2</td>
+                </tr>
+                <tr>
+                    <td>Path Type:</td>
+                    <td>LINEAR</td>
+                </tr>
+            </tbody></table>
+            <table border="0" cellpadding="0" cellspacing="0" width="300">
+                <tbody><tr>
+                    <td colspan="2">Path2:</td>
+                </tr>
+                <tr>
+                    <td width="120">Name:</td>
+                    <td width="180">DoorPath_Right</td>
+                </tr>
+                <tr>
+                    <td>Position:</td>
+                    <td>2, 12, 2</td>
+                </tr>
+                <tr>
+                    <td>Path Type:</td>
+                    <td>LINEAR</td>
+                </tr>
+            </tbody></table></pre>
+            <p>2. Setup the Verve Sequence.</p>
+            <p>Create a new sequence in the Sequence Editor and give the Controller the following properties:</p>
+            <p>Create a new "Scene Object Group" using the following properties:</p>
+            <p><img src="PathTutorial_2.png" alt="" height="221" width="696"></p>
+            <p>Repeat this for the right section of the door:</p>
+            <p><img src="PathTutorial_3.png" alt="" height="221" width="696"></p>
+            <p>3. Keyframe the Door Positions.</p>
+            <p>Make sure that the time cue is at the beginning of the sequence.</p>
+            <p>Create a new Event on the "DoorGroup0_Left" Motion Track and repeat this for "DoorGroup0_Right". When a new Event on a Motion Track is created, a new Node will be added to the Path the Track references. This new Node will adopt the transform of the object the parent Group references.</p>
+            <p>In this case, the two Nodes that you have just created represent the position of the Door when it is in its "closed" state. The next step is to create two more Nodes representing the position of the Door when it is open.</p>
+            <p>Move the Time Cue in the Sequence Editor to the end of the sequence (time: 1000).</p>
+            <p>Enter the World Editor and move "DoorShape0_Left" 3.5 units to the left and "DoorShape0_Right" 3.5 units to the right:</p>
+            <pre><table border="0" cellpadding="0" cellspacing="0" width="300">
+                <tbody><tr>
+                    <td colspan="2">DoorShape0_Left:</td>
+                </tr>
+                <tr>
+                    <td width="120">Position:</td>
+                    <td width="180">-5.5, 12, 2</td>
+                </tr>
+            </tbody></table>
+            <table border="0" cellpadding="0" cellspacing="0" width="300">
+                <tbody><tr>
+                    <td colspan="2">DoorShape0_Right:</td>
+                </tr>
+                <tr>
+                    <td width="120">Position:</td>
+                    <td width="180">5.5, 12, 2</td>
+                </tr>
+            </tbody></table></pre>
+            <p>Go back into the Sequence Editor and create a new Event on the Motion Tracks for both, "DoorGroup0_Left" and "DoorGroup0_Right".</p>
+            <p>If you drag the Time Cue, you should see that the Door opens and shuts as you would expect. Hit the Play button and watch it in action!</p>
+            <p>Save the Sequence as "DoorGroup0_OpenClose.vsf" to your Sequences folder.</p>
+        </div>
+        <div class="class_method_description">
+            <p><strong>Second Set of Sliding Doors</strong></p>
+            <p>Since the first and second Doors only differ by their position, the Path objects you created for the first Door can also be used to interpolate the second. When an object is attached to a path using the "relative" flag, it will offset the pathed position by the object's initial position relative to the mount Node.</p>
+            <p>In simple terms, you can reuse existing Paths for similar objects.</p>
+            <p>1. Setup the Verve Sequence.</p>
+            <p>Create a new sequence in the Sequence Editor with the same properties as were in the first:</p>
+            <p><img src="PathTutorial_4.png" alt="" height="221" width="696"></p>
+            <p>Create two more Scene Object Groups, using the following properties:</p>
+            <p><img src="PathTutorial_5.png" alt="" height="221" width="696"></p>
+            <p><img src="PathTutorial_6.png" alt="" height="221" width="696"></p>
+            <p>Select each of the two Motion Tracks and ensure that the "Relative" toggle is checked. Note that if your objects are mounted to the Path before this property has been set, they will "snap" to the position of the Path. If this happens, hit the "Reset" button and reposition your objects accordingly.</p>
+            <p><img src="PathTutorial_7.png" alt="" height="221" width="696"></p>
+            <p>2. Keyframe the Door Positions.</p>
+            <p>Make sure that the time cue is at the beginning of the sequence.</p>
+            <p>Select the "Motion Track" for "DoorGroup1_Left" and then hit the "Add Event" button. Since we are reusing an existing Path, a new Path Node is not created, instead the Event will reference the first Node on the Path.</p>
+            <p>Do the same thing for "DoorGroup1_Right".</p>
+            <p>Move the Time Cue in the Sequence Editor to the end of the sequence (time: 1000).</p>
+            <p>Since we're using an existing Path, any Events that we create will attempt to reference existing Nodes. If you create more Events than there are Nodes on the Path, new Nodes will be created.</p>
+            <p>Select the Motion Track for "DoorGroup1_Left" and hit the "Add Event" button. Repeat this for "DoorGroup1_Right".</p>
+            <p>If you drag the Time Cue around, you should see that the Door opens and shuts in the same way that the first Door did.</p>
+            <p>Save the Sequence as "DoorGroup1_OpenClose.vsf" to your Sequences folder.</p>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+<div id="footer">Copyright © Violent Tulip 2009-2010. All Rights Reserved.</div>
+</body>
+</html>

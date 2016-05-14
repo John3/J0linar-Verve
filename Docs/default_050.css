@@ -1,0 +1,35 @@
+/* ::::: http://www.violent-tulip.com/include/css/main.css ::::: */
+
+body { background-color: rgb(65, 76, 96); font: 80% "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Helvetica,Arial,sans-serif; margin-top: 125px; margin-bottom: 38px; }
+h1 { font-family: Georgia,"Times New Roman",Times,serif; margin-top: 18px; }
+a, a:hover, a:active, a:visited { color: rgb(255, 255, 255); text-decoration: none; }
+a:hover { text-decoration: underline; }
+p { margin: 0px 0px 15px; padding: 0px; }
+pre { border: 1px solid rgb(135, 139, 148); background-color: rgb(80, 97, 125); color: rgb(255, 255, 255); font-size: 12px; line-height: 15px; padding: 15px; margin: 0px 0px 15px; }
+#header { background: transparent url("header_background.jpg") repeat-x scroll center center; margin: 0px auto 38px; width: 800px; height: 44px; }
+#header_inner { margin: 0px auto; width: 251px; overflow: hidden; }
+#main { margin: 0px auto; width: 800px; text-align: left; color: rgb(204, 204, 204); }
+#footer { margin-top: 38px; margin-bottom: 38px; padding-top: 12px; padding-bottom: 12px; font-size: 80%; text-align: center; color: rgb(255, 255, 255); background-color: rgb(71, 87, 111); }
+.small_text { font-size: 80%; }
+#btn_home { display: block; width: 101px; height: 44px; background: transparent url("btn_home.jpg") no-repeat scroll 0px 0px; float: left; overflow: hidden; }
+#btn_home:hover { background-position: 0px -44px; }
+#btn_contact { display: block; width: 118px; height: 44px; background: transparent url("btn_contact.jpg") no-repeat scroll 0px 0px; float: left; overflow: hidden; margin: 0px 0px 0px 32px; }
+#btn_contact:hover { background-position: 0px -44px; }
+.btn_container { background: transparent url("header_background.jpg") repeat-x scroll center center; height: 44px; }
+.btn_buy { display: block; width: 95px; height: 44px; background: transparent url("btn_buy.jpg") no-repeat scroll 0px 0px; float: left; overflow: hidden; margin: 0px 32px; }
+.btn_buy:hover { background-position: 0px -44px; }
+.btn_docs { display: block; width: 95px; height: 44px; background: transparent url("btn_docs.jpg") no-repeat scroll 0px 0px; float: left; overflow: hidden; }
+.btn_docs:hover { background-position: 0px -44px; }
+/* ::::: http://www.violent-tulip.com/include/css/class.css ::::: */
+
+.class_method { border-bottom: 1px solid rgb(255, 255, 255); font-family: "Trebuchet MS",Arial,Helvetica,sans-serif; margin-bottom: 15px; padding-left: 15px; }
+.class_method_last { font-family: "Trebuchet MS",Arial,Helvetica,sans-serif; margin-bottom: 45px; padding-left: 15px; }
+.class_method_function { font-family: Georgia,"Times New Roman",Times,serif; font-size: 18px; margin-top: -3px; margin-bottom: 12px; margin-left: 30px; text-indent: -30px; line-height: 150%; }
+.class_method_descriptor { margin-left: 30px; font-family: "Trebuchet MS",Arial,Helvetica,sans-serif; font-size: 12px; margin-bottom: 15px; color: rgb(204, 204, 204); }
+.class_method_descriptor_label { font-family: Georgia,"Times New Roman",Times,serif; font-size: 12px; color: rgb(255, 255, 255); margin: 15px 0px 4px -15px; }
+.class_method_description, .class_method_return { font-family: "Trebuchet MS",Arial,Helvetica,sans-serif; font-size: 14px; color: rgb(255, 255, 255); margin-bottom: 5px; }
+.class_method_return { margin-bottom: 30px; }
+.class_method_parameters, .class_field_descriptor { font-family: "Trebuchet MS",Arial,Helvetica,sans-serif; font-size: 12px; margin-bottom: 15px; color: rgb(170, 170, 170); }
+.class_field_descriptor { margin-left: 45px; }
+.classList_listItem, .classList_sublistItem { margin: 0px; padding: 0px 0px 2px 20px; list-style: outside none none; background: transparent url("li_bullet_dk.jpg") no-repeat scroll 0px 5px; }
+.classList_sublistItem { background-image: url("li_bullet_sub_dk.jpg"); }
